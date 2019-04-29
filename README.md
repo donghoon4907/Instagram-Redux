@@ -3,6 +3,6 @@
 * Header, Footer
 * Authpage
 * Feedpage
-* SearchPage(...ing)
+* SearchPage
 * MyPage(...ing)
 * App(...ing)
