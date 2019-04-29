@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import style from "styled-components";
 import Input from "../../components/input";
 import Btn from "../../components/btn";
+import Footer from "../../components/footer";
 
 const Wrapper = style.div`
     min-height: 80vh;
@@ -65,7 +66,7 @@ export default ({
         {action === "login" && (
           <div>
             <Helmet>
-              <title>로그인</title>
+              <title>Login | Insta</title>
             </Helmet>
             <form onSubmit={handleSubmit}>
               <Input type={"email"} placeholder={"이메일"} {...email} />
@@ -77,7 +78,7 @@ export default ({
         {action === "signup" && (
           <>
             <Helmet>
-              <title>회원가입</title>
+              <title>Sign Up | Insta</title>
             </Helmet>
             <form onSubmit={handleSubmit}>
               <Input
@@ -132,6 +133,7 @@ export default ({
           )}
         </StateChanger>
       )}
+      <Footer />
     </Wrapper>
   );
 };

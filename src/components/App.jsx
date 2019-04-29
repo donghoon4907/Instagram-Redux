@@ -2,6 +2,7 @@ import React from "react";
 import style, { ThemeProvider } from "styled-components";
 import { HashRouter as Router } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { hot } from "react-hot-loader/root";
 import "react-toastify/dist/ReactToastify.css";
 import GlobalStyle from "../styles/globalstyle";
 import theme from "../styles/theme";
@@ -14,7 +15,7 @@ const Wrapper = style.div`
   max-width: ${props => props.theme.maxWidth};
   width:100%;
 `;
-export default function() {
+export default hot(function() {
   const isLogin = sessionStorage.getItem("loginId") ? true : false;
   return (
     <ThemeProvider theme={theme}>
@@ -24,11 +25,10 @@ export default function() {
           {isLogin && <Header />}
           <Wrapper>
             <Routes isLogin={isLogin} />
-            <Footer />
           </Wrapper>
           <ToastContainer position={toast.POSITION.BOTTOM_LEFT} />
         </Router>
       </>
     </ThemeProvider>
   );
-}
+});

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import style from "styled-components";
 import Loader from "../components/loader";
 import Post from "../components/Post";
+import datas from "../data";
+import Footer from "../components/footer";
 
 const Wrapper = style.div`
     display:flex;
@@ -11,42 +13,6 @@ const Wrapper = style.div`
 `;
 const loadData = () => {
   let timeout;
-  //load data
-  const datas = [
-    {
-      id: "test",
-      user: {
-        id: "user01",
-        avatar: "http://placehold.it/30x30",
-        username: "manager"
-      },
-      files: [
-        {
-          id: "file01",
-          url: "http://placehold.it/600x299"
-        },
-        {
-          id: "file02",
-          url: "http://placehold.it/600x300"
-        }
-      ],
-      likeCount: 1,
-      isLiked: true,
-      comments: [
-        {
-          id: "comment01",
-          text: "test message",
-          user: {
-            id: "user02",
-            username: "nickname02"
-          }
-        }
-      ],
-      createdAt: "2019-04-28 16:20:30",
-      location: "seoul",
-      caption: "love"
-    }
-  ];
   const [val, setVal] = useState("loading");
   useEffect(() => {
     timeout = setTimeout(() => {
@@ -74,6 +40,7 @@ const loadData = () => {
           location={data.location}
         />
       ))}
+      <Footer />
     </>
   );
 };

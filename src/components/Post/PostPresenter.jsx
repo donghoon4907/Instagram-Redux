@@ -9,6 +9,7 @@ const Post = style.div`
   ${props => props.theme.whiteBox};
   width: 100%;
   max-width: 600px;
+  margin-bottom: 60px;
 `;
 
 const Header = style.div`

@@ -14,8 +14,8 @@ const Container = style.button`
     font-size: 14px;
 `;
 
-function Btn({ text }) {
-  return <Container>{text}</Container>;
+function Btn({ text, onClick }) {
+  return <Container onClick={onClick}>{text}</Container>;
 }
 export default Btn;
 
